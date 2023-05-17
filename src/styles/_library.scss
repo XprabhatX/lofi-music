@@ -1,0 +1,122 @@
+.library {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    height: 100%;
+    // background: white;
+    background: rgba($color: #000000, $alpha: 0);
+    // box-shadow: 2px 2px 50px rgb(204, 204, 204);
+    overflow-y: scroll;
+
+    h2 {
+        padding: 1rem;
+    }
+
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.library-song {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    cursor: pointer;
+    transition: background 0.5s ease;
+
+    .cover-img {
+        width: 30%;
+        transition: all 0.3s ease;
+        border-radius: 1rem;
+    }
+
+    &:hover {
+        background-color: #5b6467;
+    }
+}
+
+.song-description {
+    padding-left: 1rem;
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 0.7rem;
+    }
+
+    img {
+        border-radius: 0;
+        width: auto;
+        height: 2rem;
+        display: none;
+    }
+}
+
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(155, 155, 155, 0.5);
+    width: 5px;
+    border-radius: 20px;
+    border: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.selected {
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+    .cover-img {
+        width: 40%;
+        filter: drop-shadow(0 0 20px rgb(148, 148, 148));
+    }
+
+    .song-description {
+        img {
+            display: block;
+        }
+    }
+}
+
+.active-library {
+    transform: translate(0);
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .library {
+        width: 100%;
+    }
+
+    .active-library {
+        // background-color: #000000;
+        // background-image: linear-gradient(120deg, #000000 0%, #414141 74%);
+        background: transparent;
+    }
+
+    .library-active-bg {
+        z-index: 0;
+    }
+
+    .library-active-song-container {
+        img {
+            transform: translateY(100%) scale(0);
+        }
+    }
+}

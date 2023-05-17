@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    // color: rgb(54, 54, 54);
+    color: rgb(243, 243, 243);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h3,
+h4 {
+    font-weight: 400;
+    // color: rgb(100, 100, 100);
+    color: rgb(228, 228, 228);
+
+}
+
+.App {
+    transition: all 0.5s ease;
+}
+
+.bg-image {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -10;
+    background-image: url('https://images.unsplash.com/photo-1632059368252-be6d65abc4e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    filter: blur(12px);
+    transform: scale(1.1);
+}
+
+.library-active {
+    margin-left: 30%
+}
+
+.end-credits {
+    font-family: cursive;
+    font-weight: bold;
+    font-style: italic;
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+
+    filter: drop-shadow(0 0 10px rgb(187, 187, 187));
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .end-credits {
+        scale: 0.7;
+        bottom: 1rem;
+        right: 0rem;
+    }
+
+    .end-credits-hide {
+        transform: translateY(100%);
+        scale: 0;
+    }
+}
+
+@import './player';
+@import './song';
+@import './library';
+@import './nav';
